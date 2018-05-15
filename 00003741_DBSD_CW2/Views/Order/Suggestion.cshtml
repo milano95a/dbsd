@@ -1,0 +1,49 @@
+﻿@model IEnumerable<_00003741_DBSD_CW2.Models.Suggestion>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeftInStock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfCustomerBought)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LeftInStock)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberOfCustomerBought)
+        </td>
+        <td>
+            @Html.ActionLink("Add to cart", "AddToCart", new { id=item.Id }) |           
+        </td>
+    </tr>
+}
+
+</table>
